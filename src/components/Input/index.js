@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 
 import { Container, TInput } from './styles';
 
-export default function Input({ style, ...rest }) {
+function Input({ style, ...rest }, ref) {
   return (
     <Container style={style}>
-      <TInput {...rest} />
+      <TInput {...rest} ref={ref} />
     </Container>
   );
 }
@@ -18,3 +18,5 @@ Input.propTypes = {
 Input.defaultProps = {
   style: {},
 };
+
+export default forwardRef(Input);
