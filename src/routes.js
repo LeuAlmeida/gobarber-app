@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity } from 'react-native';
+// import { TouchableOpacity } from 'react-native';
 
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -14,7 +14,7 @@ import SignUp from './pages/SignUp';
 // import Confirm from './pages/New/Confirm';
 
 import Dashboard from './pages/Dashboard';
-// import Profile from './pages/Profile';
+import Profile from './pages/Profile';
 
 Icon.loadFont();
 
@@ -122,7 +122,7 @@ export default function createRouter(isSigned = false) {
           ),
         }}
       />
-      {/* <Tabs.Screen
+      <Tabs.Screen
         name="Profile"
         component={Profile}
         options={{
@@ -131,7 +131,7 @@ export default function createRouter(isSigned = false) {
             <Icon name="person" size={20} color={color} />
           ),
         }}
-      /> */}
+      />
     </Tabs.Navigator>
   );
 }
