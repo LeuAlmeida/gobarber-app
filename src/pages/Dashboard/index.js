@@ -2,8 +2,14 @@ import React from 'react';
 
 import Background from '~/components/Background';
 
-// import { Container } from './styles';
+import { Container, Title } from './styles';
 
 export default function Dashboard() {
-  return <Background />;
+  return (
+    <Background>
+      <Container>
+        <Title>Agendamentos</Title>
+      </Container>
+    </Background>
+  );
 }
