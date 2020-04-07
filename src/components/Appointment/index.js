@@ -3,6 +3,7 @@ import { parseISO, formatRelative } from 'date-fns';
 import pt from 'date-fns/locale/pt';
 import { TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import PropTypes from 'prop-types';
 
 import { Container, Left, Avatar, Info, Name, Time } from './styles';
 
@@ -38,3 +39,17 @@ export default function Appointment({ data }) {
     </Container>
   );
 }
+
+Appointment.propTypes = {
+  data: PropTypes.shape({
+    date: PropTypes.string,
+    past: PropTypes.bool,
+    provider: PropTypes.shape({
+      name: PropTypes.string,
+      avatar: PropTypes.shape({
+        url: PropTypes.string,
+      }),
+    }),
+    cancelable: PropTypes.bool,
+  }).isRequired,
+};
