@@ -32,8 +32,20 @@ export const FormInput = styled(Input)`
   margin-bottom: 10px;
 `;
 
-export const SubmitButton = styled(Button)`
+export const SubmitButton = styled.TouchableOpacity`
+  height: 46px;
+  background: #3b9eff;
+  border-radius: 4px;
   margin-top: 5px;
+
+  align-items: center;
+  justify-content: center;
+`;
+
+export const SubmitText = styled.Text`
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
 `;
 
 export const LogoutButton = styled(Button)`
