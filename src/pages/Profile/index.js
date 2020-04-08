@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import Background from '~/components/Background';
@@ -11,6 +11,7 @@ import {
   Form,
   FormInput,
   SubmitButton,
+  SubmitText,
 } from './styles';
 
 export default function Profile() {
@@ -28,6 +29,12 @@ export default function Profile() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
+  useEffect(() => {
+    setOldPassword('');
+    setPassword('');
+    setConfirmPassword('');
+  }, [profile]);
+
   function handleSubmit() {
     dispatch(
       updateProfileRequest({
@@ -44,7 +51,6 @@ export default function Profile() {
     <Background>
       <Container>
         <Title>Meu perfil</Title>
-
         <Form>
           <FormInput
             icon="person-outline"
@@ -108,7 +114,9 @@ export default function Profile() {
             onChangeText={setConfirmPassword}
           />
 
-          <SubmitButton onPress={handleSubmit}>Atualizar perfil</SubmitButton>
+          <SubmitButton onPress={handleSubmit}>
+            <SubmitText>Atualizar perfil</SubmitText>
+          </SubmitButton>
         </Form>
       </Container>
     </Background>
